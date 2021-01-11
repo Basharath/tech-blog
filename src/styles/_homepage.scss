@@ -1,5 +1,6 @@
 .homepage {
-  margin: 80px auto;
+  margin: 50px auto;
+  padding: 20px;
   max-width: $maxWidth;
 
   display: flex;
@@ -12,5 +13,28 @@
 
   .block-2 {
     width: 30%;
+  }
+}
+
+@media (max-width: $lg) {
+  .homepage {
+    flex-direction: column;
+    .block-1 {
+      width: 100%;
+      margin-bottom: 50px;
+    }
+
+    .block-2 {
+      width: 100%;
+    }
+  }
+}
+
+@media (max-width: $md) {
+}
+
+@media (max-width: $sm) {
+  .homepage {
+    padding: 15px;
   }
 }

@@ -21,6 +21,7 @@
         display: flex;
         font-size: 13px;
         justify-content: space-between;
+        padding: 0 5px;
         .user {
           margin-right: 50px;
         }
@@ -42,5 +43,28 @@
 
   .card:last-child {
     padding-bottom: 25px;
+  }
+}
+
+@media (max-width: $md) {
+  .posts .card {
+    flex-direction: column;
+    &-image {
+      min-width: 100%;
+      margin-bottom: 15px;
+    }
+  }
+}
+
+@media (max-width: $sm) {
+  .posts {
+    padding: 15px;
+    padding-bottom: 0;
+    .card {
+      &-image {
+        width: 250px;
+        margin-bottom: 15px;
+      }
+    }
   }
 }
