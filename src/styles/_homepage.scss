@@ -1,0 +1,16 @@
+.homepage {
+  margin: 80px auto;
+  max-width: $maxWidth;
+
+  display: flex;
+  justify-content: center;
+
+  .block-1 {
+    width: 70%;
+    margin-right: 25px;
+  }
+
+  .block-2 {
+    width: 30%;
+  }
+}

@@ -1,0 +1,46 @@
+.posts {
+  // margin: 20px 25px;
+  padding: 25px 25px 0 25px;
+  border: 1px solid $light;
+  // max-width: 720px;
+  @include center;
+  flex-direction: column;
+
+  .card {
+    display: flex;
+    padding-bottom: 40px;
+    &-image {
+      width: 320px;
+      height: 190px;
+      margin-right: 20px;
+      cursor: pointer;
+    }
+
+    &-body {
+      .author-time {
+        display: flex;
+        font-size: 13px;
+        justify-content: space-between;
+        .user {
+          margin-right: 50px;
+        }
+      }
+
+      .title {
+        font-size: 1.7rem;
+        font-weight: 600;
+        margin: 10px 0;
+        cursor: pointer;
+      }
+
+      .excerpt {
+        margin-bottom: 10px;
+        text-align: justify;
+      }
+    }
+  }
+
+  .card:last-child {
+    padding-bottom: 25px;
+  }
+}

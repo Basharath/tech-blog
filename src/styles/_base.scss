@@ -1,0 +1,75 @@
+$primary: #08f;
+$primary_hover: hsl(208, 100%, 40%);
+$dark: #303a40;
+$black: #2c2f34;
+$secondary: #f98f45;
+$secondary_hover: hsl(25, 94%, 58%);
+$background: #303a40;
+$light: #ccc;
+$lightBackground: hsl(25, 48%, 94%);
+$lightgreen: #12908e;
+$lightgreen_hover: hsl(179, 78%, 27%);
+$green_cover: rgba(18, 144, 142, 0.9);
+$white: #f7f7f7;
+$maxWidth: 1200px;
+$xs: 360px;
+$sm: 576px;
+$md: 768px;
+$lg: 1025px;
+$textShadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+$boxShadow: 1px 1px 15px 1px rgba(0, 0, 0, 0.1);
+$quickland: 'Quicksand', sans-serif;
+
+$ff1: 'Roboto', sans-serif;
+$ff2: 'Quicksand', sans-serif;
+
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap');
+
+@mixin center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin borderBottom {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: -5px;
+  width: 50%;
+  height: 2px;
+  background-color: $dark;
+  transform: translateX(-50%);
+}
+
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: $ff2;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.btn {
+  border: none;
+  background-color: $primary;
+  color: $white;
+  padding: 5px 10px;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  outline: none;
+}
+
+.btn:hover {
+  background-color: $primary_hover;
+}
