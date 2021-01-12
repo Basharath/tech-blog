@@ -19,10 +19,10 @@ export default function Navbar() {
     });
   };
 
-  const handleNavItem = (item) => {
-    // setShow(false);
-    setActive(item);
-  };
+  // const handleNavItem = (item) => {
+  //   // setShow(false);
+  //   // setActive(item);
+  // };
 
   useEffect(() => {
     document.addEventListener('scroll', handleScroll);
@@ -49,11 +49,7 @@ export default function Navbar() {
           <div className={'nav-collapse' + (show ? ' show' : '')}>
             <ul className="navbar">
               <li className={'nav-item' + (active === '' ? ' active' : '')}>
-                <Link
-                  className="nav-link"
-                  to="/home"
-                  onClick={() => handleNavItem('home')}
-                >
+                <Link className="nav-link" to="/home">
                   Home
                 </Link>
               </li>
@@ -63,11 +59,7 @@ export default function Navbar() {
                   'nav-item' + (active === 'technology' ? ' active' : '')
                 }
               >
-                <Link
-                  className="nav-link"
-                  to="/technology"
-                  onClick={() => handleNavItem('tech')}
-                >
+                <Link className="nav-link" to="/technology">
                   Technology <i className="fas fa-sort-down"></i>
                 </Link>
                 <ul className="dropdown">
@@ -84,11 +76,7 @@ export default function Navbar() {
               </li>
 
               <li className={'nav-item' + (active === 'news' ? ' active' : '')}>
-                <Link
-                  className="nav-link"
-                  to="/news"
-                  onClick={() => handleNavItem('news')}
-                >
+                <Link className="nav-link" to="/news">
                   News <i className="fas fa-sort-down"></i>
                 </Link>
                 <ul className="dropdown">
@@ -101,11 +89,7 @@ export default function Navbar() {
               <li
                 className={'nav-item' + (active === 'about' ? ' active' : '')}
               >
-                <Link
-                  className="nav-link"
-                  to="/about"
-                  onClick={() => handleNavItem('about')}
-                >
+                <Link className="nav-link" to="/about">
                   About
                 </Link>
               </li>
@@ -113,11 +97,7 @@ export default function Navbar() {
               <li
                 className={'nav-item' + (active === 'contact' ? ' active' : '')}
               >
-                <Link
-                  className="nav-link"
-                  to="/contact"
-                  onClick={() => handleNavItem('contact')}
-                >
+                <Link className="nav-link" to="/contact">
                   Contact
                 </Link>
               </li>
