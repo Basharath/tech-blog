@@ -1,0 +1,171 @@
+.post {
+  padding: 25px 25px 0 25px;
+  border: 1px solid $light;
+  display: flex;
+  flex-direction: column;
+
+  .breadcrumb {
+    font-size: 14px;
+    font-weight: 500;
+    color: $dark;
+    a {
+      text-decoration: none;
+      color: $dark;
+      &:hover {
+        color: $primary;
+      }
+    }
+  }
+
+  .category {
+    margin: 10px 0;
+    background-color: $primary;
+    font-size: 14px;
+    width: fit-content;
+    padding: 3px 5px;
+    border-radius: 2px;
+
+    &:hover {
+      background-color: $primary_hover;
+    }
+    a {
+      text-decoration: none;
+      color: $white;
+    }
+  }
+
+  .post-title {
+    font-size: 2.4rem;
+    padding: 5px 0;
+  }
+
+  .meta-data {
+    display: flex;
+    justify-content: space-between;
+    span {
+      font-size: 13px;
+      padding: 5px 0;
+      a {
+        text-decoration: none;
+        color: $dark;
+
+        &:hover {
+          color: $primary_hover;
+        }
+      }
+    }
+  }
+
+  .post-content {
+    padding-bottom: 25px;
+    border-top: 1px dashed $light;
+    .post-image {
+      width: 100%;
+      height: 350px;
+      margin: 15px 0;
+    }
+
+    h2 {
+      margin: 15px 0;
+      font-size: 1.8rem;
+    }
+
+    h3 {
+      margin: 8px 0;
+      font-size: 1.6rem;
+    }
+    p {
+      font-family: $ff1 !important;
+      text-align: justify;
+      font-size: 16px;
+
+      a {
+        text-decoration: none;
+        color: $primary;
+
+        &:hover {
+          color: $dark;
+          border-bottom: 1px dotted #000;
+        }
+      }
+    }
+
+    .post-tags {
+      display: flex;
+      padding-top: 20px;
+      color: $white;
+
+      .tags {
+        font-size: 1rem;
+        margin-right: 15px;
+        background-color: $dark;
+        padding: 3px;
+        border-radius: 2px;
+      }
+
+      .tag {
+        padding: 3px;
+        margin-right: 10px;
+        background-color: $primary;
+        border-radius: 2px;
+      }
+    }
+
+    .social-icons {
+      display: flex;
+      flex-wrap: wrap;
+      padding-top: 20px;
+      .share {
+        padding-right: 20px;
+        padding-top: 5px;
+        font-size: 25px;
+        color: $dark;
+      }
+      a {
+        margin-right: 20px;
+        padding: 5px;
+        font-size: 24px;
+        color: $dark;
+        transform: scale(1);
+        transition: all 0.3s;
+
+        &:hover {
+          text-shadow: $textShadow;
+          transform: scale(1.2);
+        }
+      }
+
+      .facebook i {
+        color: $facebook;
+      }
+
+      .twitter i {
+        color: $twitter;
+      }
+
+      .pinterest i {
+        color: $pinterest;
+      }
+
+      .whatsapp i {
+        color: $whatsapp;
+      }
+
+      .linkedin i {
+        color: $linkedin;
+      }
+
+      .mail i {
+        color: $primary;
+      }
+    }
+  }
+}
+
+@media (max-width: $sm) {
+  .post .post-content {
+    .post-image {
+      height: 190px;
+    }
+  }
+}

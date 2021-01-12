@@ -1,20 +1,18 @@
 import React from 'react';
-import { Route, Switch } from 'react-router-dom';
+// import { Route, Switch } from 'react-router-dom';
 
 import Navbar from './components/Navbar';
-import Posts from './components/Posts';
+import HomePage from './components/HomePage';
+import Footer from './components/Footer';
 
 import './styles/App.scss';
-import Sidebar from './components/Sidebar';
-import HomePage from './components/HomePage';
 
 export default function App() {
   return (
     <>
       <Navbar />
-      {/* <Posts /> */}
-      {/* <Sidebar /> */}
       <HomePage />
+      <Footer />
     </>
   );
 }

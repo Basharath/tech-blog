@@ -1,0 +1,39 @@
+.footer {
+  padding: 20px 0;
+  background-color: $dark;
+  .container {
+    display: flex;
+    justify-content: space-between;
+    max-width: $maxWidth;
+    margin: 10px auto;
+    padding: 0 20px;
+    color: $white;
+
+    a {
+      text-decoration: none;
+      color: $white;
+    }
+
+    a:hover {
+      color: $primary;
+    }
+    .left a {
+      padding-left: 5px;
+    }
+
+    .right a {
+      padding-left: 15px;
+    }
+  }
+}
+
+@media (max-width: $md) {
+  .footer .container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    .left {
+      margin-bottom: 10px;
+    }
+  }
+}

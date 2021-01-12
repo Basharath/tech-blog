@@ -10,11 +10,6 @@ nav {
   padding: 10px 0;
 }
 
-// nav.scroll {
-//   background-color: $white;
-//   box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2);
-// }
-
 nav .container {
   display: flex;
   justify-content: space-between;
@@ -25,9 +20,15 @@ nav .container {
   .nav-brand {
     font-size: 3rem;
     font-weight: 700;
-    color: $primary;
     text-shadow: $textShadow;
     font-family: $quickland;
+    a {
+      text-decoration: none;
+      color: $primary;
+      &:hover {
+        color: $primary_hover;
+      }
+    }
   }
 
   .nav-toggler {
@@ -48,6 +49,7 @@ nav .container {
     .nav-item {
       padding: 20px 15px;
       position: relative;
+      white-space: nowrap;
 
       &:hover {
         background-color: $primary_hover;
@@ -82,9 +84,19 @@ nav .container {
 
         li {
           padding: 10px;
-          color: $white;
           font-size: 14px;
+          color: $white;
+
           border-bottom: 1px solid rgba(204, 204, 204, 0.1);
+
+          a {
+            text-decoration: none;
+            color: $white;
+
+            &:hover {
+              color: $primary;
+            }
+          }
         }
       }
 

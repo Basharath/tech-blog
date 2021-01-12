@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 export default function Navbar() {
   const [show, setShow] = useState(false);
   const [scroll, setScroll] = useState(false);
-  const [active, setActive] = useState('');
+  const [active, setActive] = useState('home');
+  const location = useLocation();
 
   const handleScroll = () => {
     if (window.pageYOffset > 50) setScroll(true);
@@ -14,6 +15,7 @@ export default function Navbar() {
   const scrollUp = () => {
     window.scrollTo({
       top: 0,
+      behavior: 'smooth',
     });
   };
 
@@ -24,11 +26,12 @@ export default function Navbar() {
 
   useEffect(() => {
     document.addEventListener('scroll', handleScroll);
+    setActive(location.pathname.slice(1));
 
     return () => {
       document.removeEventListener('scroll', handleScroll);
     };
-  }, []);
+  }, [location.pathname]);
 
   return (
     <div className="sticky-container">
@@ -37,13 +40,15 @@ export default function Navbar() {
       </div>
       <nav id="nav" className={scroll ? 'scroll' : ''}>
         <div className="container">
-          <div className="nav-brand">Tech Blog</div>
+          <div className="nav-brand">
+            <Link to="/">Tech Blog</Link>
+          </div>
           <div className="nav-toggler" onClick={() => setShow(!show)}>
             <i className={'fas ' + (show ? 'fa-times' : 'fa-bars')}></i>
           </div>
           <div className={'nav-collapse' + (show ? ' show' : '')}>
             <ul className="navbar">
-              <li className={'nav-item' + (active === 'home' ? ' active' : '')}>
+              <li className={'nav-item' + (active === '' ? ' active' : '')}>
                 <Link
                   className="nav-link"
                   to="/home"
@@ -52,34 +57,47 @@ export default function Navbar() {
                   Home
                 </Link>
               </li>
-              <li className={'nav-item' + (active === 'tech' ? ' active' : '')}>
+
+              <li
+                className={
+                  'nav-item' + (active === 'technology' ? ' active' : '')
+                }
+              >
                 <Link
                   className="nav-link"
-                  to="/about"
+                  to="/technology"
                   onClick={() => handleNavItem('tech')}
                 >
                   Technology <i className="fas fa-sort-down"></i>
                 </Link>
                 <ul className="dropdown">
-                  <li>Gadgets</li>
-                  <li>Mobiles</li>
-                  <li>Tips</li>
+                  <li>
+                    <Link to="programming">Programming</Link>
+                  </li>
+                  <li>
+                    <Link to="productivity">Productivity</Link>
+                  </li>
+                  <li>
+                    <Link to="crypto">Crypto</Link>
+                  </li>
                 </ul>
               </li>
+
               <li className={'nav-item' + (active === 'news' ? ' active' : '')}>
                 <Link
                   className="nav-link"
-                  to="/about"
+                  to="/news"
                   onClick={() => handleNavItem('news')}
                 >
                   News <i className="fas fa-sort-down"></i>
                 </Link>
                 <ul className="dropdown">
                   <li>Trending</li>
-                  <li>Social Media</li>
+                  <li>Mobiles</li>
                   <li>Computers</li>
                 </ul>
               </li>
+
               <li
                 className={'nav-item' + (active === 'about' ? ' active' : '')}
               >
@@ -91,19 +109,7 @@ export default function Navbar() {
                   About
                 </Link>
               </li>
-              <li
-                className={
-                  'nav-item' + (active === 'advertise' ? ' active' : '')
-                }
-              >
-                <Link
-                  className="nav-link"
-                  to="/projects"
-                  onClick={() => handleNavItem('advertise')}
-                >
-                  Advertise
-                </Link>
-              </li>
+
               <li
                 className={'nav-item' + (active === 'contact' ? ' active' : '')}
               >

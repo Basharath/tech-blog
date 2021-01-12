@@ -56,5 +56,118 @@
         }
       }
     }
+
+    // Search box
+    .search-box {
+      display: flex;
+      input {
+        padding: 5px;
+        border: 1px solid $light;
+        font-size: 15px;
+        font-family: $ff2;
+        outline: none;
+        width: 100%;
+        border-right: 0;
+
+        &:focus {
+          border-color: $primary_hover;
+        }
+      }
+
+      .btn-search {
+        padding: 5px 10px;
+        background-color: $dark;
+        border: 1px solid $dark;
+        border-left-color: $dark;
+        cursor: pointer;
+
+        i {
+          color: $white;
+        }
+
+        &:hover {
+          background-color: $primary_hover;
+          border: 1px solid $primary_hover;
+        }
+      }
+    }
+
+    // Recent posts
+
+    .recent-posts {
+      .title {
+        font-size: 1.2;
+        font-weight: 600;
+        padding-bottom: 10px;
+        margin-bottom: 10px;
+        border-bottom: 2px solid $primary;
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .recent-post {
+        display: flex;
+        margin-bottom: 15px;
+        .post-image {
+          width: 80px;
+          height: 50px;
+          margin-right: 10px;
+          cursor: pointer;
+        }
+
+        .post-body {
+          .post-title {
+            font-size: 15px;
+            font-weight: 500;
+            cursor: pointer;
+
+            &:hover {
+              color: $primary_hover;
+            }
+          }
+          .post-date {
+            font-size: 12px;
+          }
+        }
+      }
+
+      .recent-post:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    // Categories
+
+    .categories {
+      .title {
+        font-size: 1.2;
+        font-weight: 600;
+        padding-bottom: 10px;
+        margin-bottom: 10px;
+        border-bottom: 2px solid $primary;
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .category {
+        margin-bottom: 10px;
+        font-weight: 500;
+        i {
+          color: $primary_hover;
+        }
+        a {
+          text-decoration: none;
+          color: $dark;
+
+          &:hover {
+            color: $primary_hover;
+          }
+        }
+      }
+
+      .category:last-child {
+        margin-bottom: 0;
+      }
+    }
   }
 }
